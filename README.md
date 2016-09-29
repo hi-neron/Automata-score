@@ -29,17 +29,17 @@ Guarda las habilidades que el usuario ha conseguido
   para asegurarse de que asi sea
 
 ### Badges
+*Este feature hace parte del modulo <Duel> que tiene **BAJA PRIORIDAD** en desarrollo.*
+
 Agrega logros a los usuarios
 > tipo array
 
-En la base de datos tiene la funcion:
+En la base de datos tiene la función:
 **addBadge** (<nombre de usuario>, <nombre de la insignia>)
 - <Nombre de usuario> es el nombre del usuario al que se añadiran los puntos
 - <Nombre de la insignia> nombre de la insignia que se quiere agregar al user
 > **PD**: la insignia debe existir en el sistema, utils.findBadge() tiene una lista
     para asegurarse de que asi sea
-
-Este Ultimo hace parte del modulo <Duel> que tiene **BAJA PRIORIDAD** en desarrollo.
 
 ## Skills
 
