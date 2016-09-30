@@ -13,7 +13,7 @@ module.exports = {
       avatar: '/standard.png',
       masteries: [],
       skills: ['clock'],
-      points: 750,
+      points: 160,
       images: 2,
       level: 0
     }

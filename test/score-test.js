@@ -38,7 +38,7 @@ test('Get points from push an image', async t => {
   // debe devolver el nombre del usuario
   t.is(response.username, username)
   // La actualizacion de los puntajes
-  t.is(response.points, 760)
+  t.is(response.points, 170)
   // Una propiedad que muestra los extras <nuevas skills si se consiguen>
   t.is(typeof response.bonus, 'object')
   t.truthy(response.bonus.skill)
@@ -57,7 +57,26 @@ test('Get points from Delete an image', async t => {
   // debe devolver el nombre del usuario
   t.is(response.username, username)
   // La actualizacion de los puntajes
-  t.is(response.points, 100)
+  t.is(response.points, 150)
+  // Una propiedad que muestra los extras <nuevas skills si se consiguen>
+  t.is(typeof response.bonus, 'object')
+  t.truthy(response.bonus.skill)
+})
+
+test('Get points from skill activate', async t => {
+  let score = t.context.score
+  //  rateAction (<username>, <action>, <data>)
+  let user = fixtures.getUser()
+
+  let username = user.username
+  t.is(typeof score.rateAction, 'function')
+  t.is(typeof score.onSkillActivate, 'function')
+
+  let response = await score.rateAction(username, 'skillActivate', null)
+  // debe devolver el nombre del usuario
+  t.is(response.username, username)
+  // La actualizacion de los puntajes
+  t.is(response.points, 161)
   // Una propiedad que muestra los extras <nuevas skills si se consiguen>
   t.is(typeof response.bonus, 'object')
   t.truthy(response.bonus.skill)
